@@ -1,17 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+.wapper {
+    width: 60%;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-size: 16px;
-
-    background: url('../imgs/background.jpg') no-repeat content-box top, rgba(18, 18, 20, 1);
-    background-size: cover;
+    /*Adicionando gradiente de fundo com preto nas laterais e  verde no centro formando uma elipice*/
     font-family: 'Roboto', sans-serif;
+    background-color: rgba(18, 18, 20, 1);
+    background-image: url('../imgs/Luz.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*Centraliza o conteúdo*/
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    position: relative;
 
 }
 
+.codigo-01 {
+    position: absolute;
+    /*deixa no canto inferior direito, posicionar*/
+    bottom: 50%;
+    top: 50%;
+
+}
+
+.codigo-02 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 header {
     width: 100%;
@@ -57,7 +84,7 @@ header {
     display: flex;
     justify-content: center;
     height: 410px;
-
+    
 }
 
 
@@ -72,7 +99,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 
 }
 
@@ -85,11 +112,11 @@ header {
     border: 1px solid rgba(51, 138, 243, 1);
     border-radius: 6px;
     padding: 8px 16px;
-  
+
 }
 
 .cards-container .card .card-title h2 {
-    color: rgba(247, 221, 67, 1) ;
+    color: rgba(247, 221, 67, 1);
     font-size: 24px;
     line-height: 30px;
     margin: auto;
@@ -116,6 +143,7 @@ header {
     justify-content: start;
     margin-top: 50px;
 }
+
 .cards-container .card .card-list li {
     display: flex;
     width: 100%;
@@ -125,21 +153,69 @@ header {
     border-bottom: 1px solid rgba(50, 50, 56, 1);
     padding-bottom: 16px;
 }
+
 .cards-container .card .card-list li:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
+
 .cards-container .card .card-list li p {
-   color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
     font-size: 36px;
     font-weight: 700;
     padding: 0;
     margin: 0;
 }
+
 .cards-container .card .card-list li div {
     width: 50px;
 }
+
 .cards-container .card .card-list li div img {
     width: 100%;
 
+}
+
+@media  screen and (max-width:1750px) {
+    .codigo-01 {
+        display: none;
+    }
+    .codigo-02 {
+        display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .wapper {
+        width: 80%;
+    }
+    .codigo-01 {
+        display: none;
+    }
+    .codigo-02 {
+        display: none;
+    }
+
+    
+}
+
+@media  screen and (max-width: 920px) {
+    .cards-container {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        transition: all 0.5s;
+    }
+
+    .cards-container .card {
+        margin: 10px 0;
+    }
+    .wapper {
+        width: 100%;
+    }
+    .codigo-01 {
+        display: none;
+    }
+    .codigo-02 {
+        display: none;
+    }
 }
